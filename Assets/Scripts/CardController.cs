@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class CardController : MonoBehaviour
 {
+
+    public HandController hand;
+
+    SpriteRenderer spriteRenderer;
+
+    public Color32 highlightColor;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnMouseUp() {
+        spriteRenderer.color = highlightColor;
+        hand.SelectCard(gameObject);
+    }
+
+    public void Highlight() {
+        spriteRenderer.color = highlightColor;
     }
 }
