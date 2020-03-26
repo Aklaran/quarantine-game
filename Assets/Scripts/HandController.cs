@@ -5,7 +5,7 @@ using UnityEngine;
 public class HandController : MonoBehaviour
 {
     public GameObject cardPrefab;
-    public GameObject[] cards;
+    public List<GameObject> cards;
     public int numCards;
 
     // Start is called before the first frame update
@@ -26,6 +26,8 @@ public class HandController : MonoBehaviour
             
             GameObject cardGameObject = Instantiate(cardPrefab, cardTransform, transform.rotation);
             cardGameObject.name = cardName;
+
+            cards.Add(cardGameObject);
     }
 
     Vector3 alignCard(int index, RectTransform rectTransform) {
