@@ -22,7 +22,7 @@ public class HandController : MonoBehaviour
 
     void GenerateCard(int index) {
             string cardName = string.Format("card{0}", index);
-            Vector3 cardTransform = alignCard(index, (RectTransform)transform);
+            Vector3 cardTransform = alignCard(index+1, (RectTransform)transform);
             
             GameObject cardGameObject = Instantiate(cardPrefab, cardTransform, transform.rotation);
             cardGameObject.name = cardName;
@@ -30,9 +30,10 @@ public class HandController : MonoBehaviour
 
     Vector3 alignCard(int index, RectTransform rectTransform) {
         float relativeIndex = (float)index / numCards;
-        float positionMultiplier = (float)rectTransform.rect.width / numCards;
+        float startPosition = rectTransform.position.x - (rectTransform.rect.width / 2);
+        float positionMultiplier = ((float)rectTransform.rect.width - (rectTransform.rect.width / numCards));
 
-        float relativeX = relativeIndex * positionMultiplier;
+        float relativeX = relativeIndex * positionMultiplier + startPosition;
 
         return new Vector3(relativeX, rectTransform.position.y, rectTransform.position.z);
     }
