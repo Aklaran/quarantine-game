@@ -5,21 +5,21 @@ using UnityEngine;
 public class HandController : MonoBehaviour
 {
     public GameObject cardPrefab;
+    public CastButtonController castButton;
     public List<GameObject> cards;
     public List<GameObject> selectedCards;
     public int numCards;
 
     public CardController foo;
 
-    public void SelectCard(GameObject card) {
-        selectedCards.Add(card);
-        Debug.Log(selectedCards.ToString());
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
         GenerateCards();
+    }
+
+    public void SelectCard(GameObject card) {
+        selectedCards.Add(card);
+        castButton.CardSelected(selectedCards.Count);
     }
 
     void GenerateCards() {
