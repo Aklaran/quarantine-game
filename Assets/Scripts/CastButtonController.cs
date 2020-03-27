@@ -22,4 +22,11 @@ public class CastButtonController : MonoBehaviour
             spriteRenderer.sprite = isActive ? redSprite : greySprite;
         }
     }
+
+    void OnMouseUp() {
+        if (isActive) {
+            Debug.Log("cast button clicked");
+            // TODO: CJ - Decrease character health bars
+        }
+    }
 }
