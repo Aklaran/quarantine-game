@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthbarController : MonoBehaviour
-{
+public class HealthbarController : MonoBehaviour {
     Vector3 localScale;
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start () {
         localScale = transform.localScale;
     }
-    // Update is called once per frame
-    void Update()
-    {
-        localScale.y = transform.parent.gameObject.GetComponent<CharacterController>().getHpScale();
+
+    public void DecreaseHealth (float percentage) {
+        localScale.y -= (localScale.y * percentage);
         transform.localScale = localScale;
     }
 }
