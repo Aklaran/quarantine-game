@@ -1,0 +1,536 @@
+fileFormatVersion: 2
+guid: 45d8ee2c54f224fcba2fd62eaca8dc42
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8037228223908617198
+    second: dragon-sprite-png-11-transparent_0
+  - first:
+      213: -6137339816535163853
+    second: dragon-sprite-png-11-transparent_1
+  - first:
+      213: 8505757853173386356
+    second: dragon-sprite-png-11-transparent_2
+  - first:
+      213: -8306299431738671404
+    second: dragon-sprite-png-11-transparent_3
+  - first:
+      213: 9027433372968154682
+    second: dragon-sprite-png-11-transparent_4
+  - first:
+      213: -5085569219034575828
+    second: dragon-sprite-png-11-transparent_5
+  - first:
+      213: -3962320782241477608
+    second: dragon-sprite-png-11-transparent_6
+  - first:
+      213: -5755216193992114380
+    second: dragon-sprite-png-11-transparent_7
+  - first:
+      213: -435119729962884510
+    second: dragon-sprite-png-11-transparent_8
+  - first:
+      213: 8900084066659903482
+    second: dragon-sprite-png-11-transparent_9
+  - first:
+      213: -3131408818913764411
+    second: dragon-sprite-png-11-transparent_10
+  - first:
+      213: -7829394356950502016
+    second: dragon-sprite-png-11-transparent_11
+  - first:
+      213: 1482125755293121877
+    second: dragon-sprite-png-11-transparent_12
+  - first:
+      213: 8675928901079790360
+    second: dragon-sprite-png-11-transparent_13
+  - first:
+      213: 3934713085814501130
+    second: dragon-sprite-png-11-transparent_14
+  - first:
+      213: 7515860058149270284
+    second: dragon-sprite-png-11-transparent_15
+  - first:
+      213: 6316070085900758337
+    second: dragon-sprite-png-11-transparent_0
+  - first:
+      213: -2556244490565969143
+    second: dragon-sprite-png-11-transparent_1
+  - first:
+      213: 6939088516014724963
+    second: dragon-sprite-png-11-transparent_2
+  - first:
+      213: 6051863078275369907
+    second: dragon-sprite-png-11-transparent_3
+  - first:
+      213: -5333365279031919208
+    second: dragon-sprite-png-11-transparent_4
+  - first:
+      213: 8308876214746913866
+    second: dragon-sprite-png-11-transparent_5
+  - first:
+      213: 924662286535904051
+    second: dragon-sprite-png-11-transparent_6
+  - first:
+      213: 3779746596272161947
+    second: dragon-sprite-png-11-transparent_7
+  - first:
+      213: 890439703235731159
+    second: dragon-sprite-png-11-transparent_8
+  - first:
+      213: 5902403932636773170
+    second: dragon-sprite-png-11-transparent_9
+  - first:
+      213: -8969208891367944392
+    second: dragon-sprite-png-11-transparent_10
+  - first:
+      213: 2165759846710387250
+    second: dragon-sprite-png-11-transparent_11
+  - first:
+      213: 2088416118978084572
+    second: dragon-sprite-png-11-transparent_12
+  - first:
+      213: 3858972845744274670
+    second: dragon-sprite-png-11-transparent_13
+  - first:
+      213: -8687663331296735544
+    second: dragon-sprite-png-11-transparent_14
+  - first:
+      213: -8552566741584041348
+    second: dragon-sprite-png-11-transparent_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14de596774037a750800000000000000
+      internalID: 6316070085900758337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b14cced25668cd0800000000000000
+      internalID: -2556244490565969143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367dc0e8d389c4060800000000000000
+      internalID: 6939088516014724963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bbc7e1d7698cf350800000000000000
+      internalID: 6051863078275369907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d76ed39841cf5b0800000000000000
+      internalID: -5333365279031919208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c9eae15ee0f4370800000000000000
+      internalID: 8308876214746913866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b4c26537f05dc00800000000000000
+      internalID: 924662286535904051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b944bcbd08b547430800000000000000
+      internalID: 3779746596272161947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de154d313a7b5c00800000000000000
+      internalID: 890439703235731159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23bfeadba1d89e150800000000000000
+      internalID: 5902403932636773170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f0db1c808f68380800000000000000
+      internalID: -8969208891367944392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2322afb1b135e0e10800000000000000
+      internalID: 2165759846710387250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde73e2356b8bfc10800000000000000
+      internalID: 2088416118978084572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec37748b53dd8530800000000000000
+      internalID: 3858972845744274670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce0fd9ba383f6780800000000000000
+      internalID: -8687663331296735544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon-sprite-png-11-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a201aacdd2f4980800000000000000
+      internalID: -8552566741584041348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
