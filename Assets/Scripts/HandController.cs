@@ -18,8 +18,13 @@ public class HandController : MonoBehaviour
     }
 
     public void SelectCard(GameObject card) {
-        selectedCards.Add(card);
-        castButton.CardSelected(selectedCards.Count);
+        if (!selectedCards.Contains(card)) {
+            selectedCards.Add(card);
+        } else {
+            selectedCards.Remove(card);
+        }
+
+        castButton.OnSelectionChanged(selectedCards.Count);
     }
 
     void GenerateCards() {

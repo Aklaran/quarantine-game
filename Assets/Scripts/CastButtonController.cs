@@ -13,7 +13,7 @@ public class CastButtonController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void CardSelected(int numSelected) {
+    public void OnSelectionChanged(int numSelected) {
         bool oldActive = isActive;
 
         isActive = numSelected == 3 ? true : false;

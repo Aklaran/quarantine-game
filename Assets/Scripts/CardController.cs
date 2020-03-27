@@ -9,7 +9,10 @@ public class CardController : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+
+    public Color32 defaultColor;
     public Color32 highlightColor;
+    bool selected;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +21,8 @@ public class CardController : MonoBehaviour
     }
 
     void OnMouseUp() {
-        spriteRenderer.color = highlightColor;
+        selected = !selected;
+        spriteRenderer.color = selected ? highlightColor : defaultColor;
         hand.SelectCard(gameObject);
-    }
-
-    public void Highlight() {
-        spriteRenderer.color = highlightColor;
     }
 }
