@@ -23,6 +23,7 @@ public class CardController : MonoBehaviour
     void OnMouseUp() {
         selected = !selected;
         spriteRenderer.color = selected ? highlightColor : defaultColor;
+        
         hand.SelectCard(gameObject);
     }
 }

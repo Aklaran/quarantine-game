@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class HandController : MonoBehaviour
 {
-    public GameObject cardPrefab;
-    public CastButtonController castButton;
     public List<GameObject> cards;
     public List<GameObject> selectedCards;
-    public int numCards;
+    public int maxCards;
+    public GameObject cardPrefab;
 
-    public CardController foo;
+    public CastButtonController castButton;
 
     void Start()
     {
@@ -28,31 +27,31 @@ public class HandController : MonoBehaviour
     }
 
     void GenerateCards() {
-        for (int i = 0; i < numCards; i++) {
+        for (int i = 0; i < maxCards; i++) {
             GenerateCard(i);
         }
     }
 
     void GenerateCard(int index) {
-            string cardName = string.Format("card{0}", index);
-            Vector3 cardTransform = AlignCard(index+1, (RectTransform)transform);
-            
-            GameObject cardGameObject = Instantiate(cardPrefab, cardTransform, transform.rotation);
-            cardGameObject.name = cardName;
-            cardGameObject.GetComponent<CardController>().hand = this;
+        string cardName = string.Format("card{0}", index);
 
-            cards.Add(cardGameObject);
+        Vector3 cardTransform = AlignCard(index, (RectTransform)transform); // cast transform as RectTransform to expose width
+
+        GameObject cardGameObject = Instantiate(cardPrefab, cardTransform, transform.rotation);
+        cardGameObject.name = cardName;
+
+        // Give the card object's script a reference to this script.
+        cardGameObject.GetComponent<CardController>().hand = this;
+
+        cards.Add(cardGameObject);
     }
 
     Vector3 AlignCard(int index, RectTransform rectTransform) {
-        float relativeIndex = (float)index / numCards;
         float startPosition = rectTransform.position.x - (rectTransform.rect.width / 2);
-        float positionMultiplier = ((float)rectTransform.rect.width - (rectTransform.rect.width / numCards));
-
-        float relativeX = relativeIndex * positionMultiplier + startPosition;
+        float interval = rectTransform.rect.width / (maxCards + 1);
+        
+        float relativeX = startPosition + (interval * (index + 1));
 
         return new Vector3(relativeX, rectTransform.position.y, rectTransform.position.z);
     }
-
-
 }
