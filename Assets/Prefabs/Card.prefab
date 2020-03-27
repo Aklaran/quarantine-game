@@ -97,12 +97,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
-  defaultColor:
+  unselectedColor:
     serializedVersion: 2
     rgba: 4294967295
-  highlightColor:
+  selectedColor:
     serializedVersion: 2
-    rgba: 4294966157
+    rgba: 4294957312
 --- !u!114 &4307536456239483118
 MonoBehaviour:
   m_ObjectHideFlags: 0

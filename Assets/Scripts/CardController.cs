@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class CardController : MonoBehaviour
 {
-
     public HandController hand;
+    public Color32 unselectedColor;
+    public Color32 selectedColor;
 
     SpriteRenderer spriteRenderer;
-
-
-    public Color32 defaultColor;
-    public Color32 highlightColor;
     bool selected;
 
     // Start is called before the first frame update
@@ -22,7 +19,7 @@ public class CardController : MonoBehaviour
 
     void OnMouseUp() {
         selected = !selected;
-        spriteRenderer.color = selected ? highlightColor : defaultColor;
+        spriteRenderer.color = selected ? selectedColor : unselectedColor;
         
         hand.SelectCard(gameObject);
     }

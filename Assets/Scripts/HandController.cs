@@ -33,7 +33,7 @@ public class HandController : MonoBehaviour
     }
 
     void GenerateCard(int index) {
-        string cardName = string.Format("card{0}", index);
+        string cardName = string.Format("card-{0}", index);
 
         Vector3 cardTransform = AlignCard(index, (RectTransform)transform); // cast transform as RectTransform to expose width
 

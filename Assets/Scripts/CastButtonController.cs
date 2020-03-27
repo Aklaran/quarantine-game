@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CastButtonController : MonoBehaviour
 {
-    bool isActive;
+    bool isReady;
     SpriteRenderer spriteRenderer;
     public Sprite redSprite;
     public Sprite greySprite;
@@ -16,17 +16,17 @@ public class CastButtonController : MonoBehaviour
     }
 
     public void OnSelectionChanged(int numSelected) {
-        bool oldActive = isActive;
+        bool oldActive = isReady;
 
-        isActive = numSelected == cardsRequired ? true : false;
-
-        if (isActive != oldActive) {
-            spriteRenderer.sprite = isActive ? redSprite : greySprite;
+        isReady = numSelected == cardsRequired;
+        
+        if (isReady != oldActive) {
+            spriteRenderer.sprite = isReady ? redSprite : greySprite;
         }
     }
 
     void OnMouseUp() {
-        if (isActive) {
+        if (isReady) {
             Debug.Log("cast button clicked");
             // TODO: CJ - Decrease character health bars
         }
