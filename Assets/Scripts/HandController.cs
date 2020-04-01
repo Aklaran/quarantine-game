@@ -2,56 +2,66 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandController : MonoBehaviour
-{
-    public List<GameObject> cards;
-    public List<GameObject> selectedCards;
+public class HandController : MonoBehaviour {
+    public List<CardController> selectedCards;
     public int maxCards;
     public GameObject cardPrefab;
 
     public CastButtonController castButton;
 
-    void Start()
-    {
-        GenerateCards();
+    void Start () {
+        GenerateCards ();
     }
 
-    public void SelectCard(GameObject card) {
-        if (!selectedCards.Contains(card)) {
-            selectedCards.Add(card);
+    public void SelectCard (CardController cardController) {
+        selectedCards.Add (cardController);
+        // Using List.Count to retain the index+1 value for player readability
+        bool canCast = castButton.OnSelectionChanged (selectedCards.Count);
+        if (canCast) {
+            UpdateAllSelectedCards (canCast);
         } else {
-            selectedCards.Remove(card);
+            cardController.UpdateSelectedCardIndex (selectedCards.Count, castButton.OnSelectionChanged (selectedCards.Count));
         }
-
-        castButton.OnSelectionChanged(selectedCards.Count);
     }
 
-    void GenerateCards() {
+    public void DeselectCard (CardController cardController) {
+        selectedCards.Remove (cardController);
+        cardController.UpdateSelectedCardIndex (0);
+        UpdateAllSelectedCards (castButton.OnSelectionChanged (selectedCards.Count));
+    }
+
+    int RetrieveIndex (CardController cardController) {
+        return selectedCards.IndexOf (cardController) + 1;
+    }
+
+    void GenerateCards () {
         for (int i = 0; i < maxCards; i++) {
-            GenerateCard(i);
+            GenerateCard (i, string.Format ("Card-{0}", i));
         }
     }
 
-    void GenerateCard(int index) {
-        string cardName = string.Format("card-{0}", index);
+    void GenerateCard (int index, string cardName) {
+        Vector3 cardTransform = AlignCard (index, (RectTransform) transform); // cast transform as RectTransform to expose width
 
-        Vector3 cardTransform = AlignCard(index, (RectTransform)transform); // cast transform as RectTransform to expose width
-
-        GameObject cardGameObject = Instantiate(cardPrefab, cardTransform, transform.rotation);
+        GameObject cardGameObject = Instantiate (cardPrefab, cardTransform, transform.rotation);
         cardGameObject.name = cardName;
-
         // Give the card object's script a reference to this script.
-        cardGameObject.GetComponent<CardController>().hand = this;
-
-        cards.Add(cardGameObject);
+        cardGameObject.GetComponent<CardController> ().handController = this;
     }
 
-    Vector3 AlignCard(int index, RectTransform rectTransform) {
+    Vector3 AlignCard (int index, RectTransform rectTransform) {
         float startPosition = rectTransform.position.x - (rectTransform.rect.width / 2);
         float interval = rectTransform.rect.width / (maxCards + 1);
-        
+
         float relativeX = startPosition + (interval * (index + 1));
 
-        return new Vector3(relativeX, rectTransform.position.y, rectTransform.position.z);
+        // 1.1 is a 10% offset downward on the y axis to give room for the selected card indicators
+        return new Vector3 (relativeX, (float) (rectTransform.position.y * 1.1), rectTransform.position.z);
+    }
+
+    void UpdateAllSelectedCards (bool canCast) {
+        foreach (CardController selectedCardController in selectedCards) {
+            selectedCardController.UpdateSelectedCardIndex (RetrieveIndex (selectedCardController), canCast);
+        }
     }
 }

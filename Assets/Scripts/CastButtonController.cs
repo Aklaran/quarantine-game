@@ -15,14 +15,10 @@ public class CastButtonController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void OnSelectionChanged(int numSelected) {
-        bool oldActive = isReady;
-
+    public bool OnSelectionChanged(int numSelected) {
         isReady = numSelected == cardsRequired;
-        
-        if (isReady != oldActive) {
-            spriteRenderer.sprite = isReady ? redSprite : greySprite;
-        }
+        spriteRenderer.sprite = isReady ? redSprite : greySprite;
+        return isReady;
     }
 
     void OnMouseUp() {
