@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6180299025185387641}
   - component: {fileID: 8738387140231624651}
   m_Layer: 0
-  m_Name: IndexIndicator
+  m_Name: CardIndexIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1965017021975547704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd1c85dbd8fa04269a8799eb12a7ac45, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f1569d012d5f4a0bbd4b05b10a8d8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   readyCastColor:

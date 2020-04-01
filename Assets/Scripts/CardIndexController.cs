@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectedIndexController : MonoBehaviour {
+public class CardIndexController : MonoBehaviour {
     public Color32 readyCastColor;
     public Color32 unreadyCastColor;
     int indexToDisplay;
@@ -15,7 +15,6 @@ public class SelectedIndexController : MonoBehaviour {
 
     public void UpdateIndex (int index) {
         isDisplayed = index != 0;
-        Debug.Log ("Changed is Displayed to: " + isDisplayed + "" + gameObject.name);
         indexToDisplay = index;
         UpdateText ();
     }

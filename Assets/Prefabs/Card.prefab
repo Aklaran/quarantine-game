@@ -103,8 +103,7 @@ MonoBehaviour:
   selectedColor:
     serializedVersion: 2
     rgba: 4294957312
-  selectedIndex: 0
-  indexIndicatorPrefab: {fileID: 1965017021975547704, guid: c305f48f3f3f642079159d32895f1c84,
+  cardIndexIndicatorPrefab: {fileID: 1965017021975547704, guid: c305f48f3f3f642079159d32895f1c84,
     type: 3}
 --- !u!114 &4307536456239483118
 MonoBehaviour:
