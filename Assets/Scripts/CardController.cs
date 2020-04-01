@@ -6,7 +6,7 @@ public class CardController : MonoBehaviour {
     public HandController handController;
     public Color32 unselectedColor;
     public Color32 selectedColor;
-    public GameObject cardIndexIndicatorPrefab;
+    public GameObject cardIndexPrefab;
     CardIndexController cardIndexController;
     SpriteRenderer spriteRenderer;
     bool isSelected;
@@ -14,7 +14,7 @@ public class CardController : MonoBehaviour {
     // Start is called before the first frame update
     void Start () {
         spriteRenderer = GetComponent<SpriteRenderer> ();
-        GenerateIndexIndicator ();
+        GenerateCardIndex ();
     }
 
     void OnMouseUp () {
@@ -32,11 +32,11 @@ public class CardController : MonoBehaviour {
         cardIndexController.SetCanCast (canCast);
     }
 
-    void GenerateIndexIndicator () {
-        GameObject cardIndexIndicatorObject = Instantiate (cardIndexIndicatorPrefab);
-        cardIndexIndicatorObject.transform.SetParent (gameObject.transform, false);
+    void GenerateCardIndex () {
+        GameObject cardIndexObject = Instantiate (cardIndexPrefab);
+        cardIndexObject.transform.SetParent (gameObject.transform, false);
 
         // Parent -> Child communication only
-        cardIndexController = cardIndexIndicatorObject.GetComponent<CardIndexController> ();
+        cardIndexController = cardIndexObject.GetComponent<CardIndexController> ();
     }
 }
