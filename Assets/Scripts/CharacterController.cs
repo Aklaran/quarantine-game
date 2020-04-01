@@ -19,6 +19,11 @@ public class CharacterController : MonoBehaviour {
         }
     }
 
+    // Purely for testing purposes
+    void OnMouseUp () {
+        TakeDamage (20);
+    }
+
     // Deducts raw damage from current hp and proportionately scales down the hp bar.  This will be the main method used for visual health updates
     void TakeDamage (float rawDamage) {
         healthbarController.DecreaseHealth (rawDamage / hp);
@@ -28,9 +33,5 @@ public class CharacterController : MonoBehaviour {
         if (hp <= 0) {
             Destroy (gameObject);
         }
-    }
-    // Purely for testing purposes
-    void OnMouseUp () {
-        TakeDamage (20);
     }
 }

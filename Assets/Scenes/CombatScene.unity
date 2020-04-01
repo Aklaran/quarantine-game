@@ -541,8 +541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68f51995c61542b996ed073eea02883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpTransform: {fileID: 1296511224}
   characterName: CJ the gr8
+  healthbarController: {fileID: 0}
 --- !u!61 &623661253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1000,8 +1000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68f51995c61542b996ed073eea02883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpTransform: {fileID: 1587635722}
   characterName: Dragon
+  healthbarController: {fileID: 0}
 --- !u!61 &1494992901
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1292,14 +1292,14 @@ RectTransform:
   m_GameObject: {fileID: 2056020059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.852, y: 0.604, z: 1}
+  m_LocalScale: {x: 0.852, y: 0.704, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.01, y: -3.55}
+  m_AnchoredPosition: {x: -0.01, y: -3.45}
   m_SizeDelta: {x: 14.81, y: 5.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2056020062
@@ -1314,9 +1314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9541030010840be94353da59828c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards: []
   selectedCards: []
-  maxCards: 5
+  maxCards: 3
   cardPrefab: {fileID: 7878832587944681826, guid: b810dd355717144b79d0cd0dcdccc3c5,
     type: 3}
   castButton: {fileID: 1041222530}
