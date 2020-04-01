@@ -6,32 +6,10 @@ public class HandController : MonoBehaviour {
     public List<CardController> selectedCards;
     public int maxCards;
     public GameObject cardPrefab;
-
     public CastButtonController castButton;
 
     void Start () {
         GenerateCards ();
-    }
-
-    public void SelectCard (CardController cardController) {
-        selectedCards.Add (cardController);
-        // Using List.Count to retain the index+1 value for player readability
-        bool canCast = castButton.OnSelectionChanged (selectedCards.Count);
-        if (canCast) {
-            UpdateAllSelectedCards (canCast);
-        } else {
-            cardController.UpdateSelectedCardIndex (selectedCards.Count, castButton.OnSelectionChanged (selectedCards.Count));
-        }
-    }
-
-    public void DeselectCard (CardController cardController) {
-        selectedCards.Remove (cardController);
-        cardController.UpdateSelectedCardIndex (0);
-        UpdateAllSelectedCards (castButton.OnSelectionChanged (selectedCards.Count));
-    }
-
-    int RetrieveIndex (CardController cardController) {
-        return selectedCards.IndexOf (cardController) + 1;
     }
 
     void GenerateCards () {
@@ -52,16 +30,40 @@ public class HandController : MonoBehaviour {
     Vector3 AlignCard (int index, RectTransform rectTransform) {
         float startPosition = rectTransform.position.x - (rectTransform.rect.width / 2);
         float interval = rectTransform.rect.width / (maxCards + 1);
-
         float relativeX = startPosition + (interval * (index + 1));
 
         // 1.1 is a 10% offset downward on the y axis to give room for the selected card indicators
         return new Vector3 (relativeX, (float) (rectTransform.position.y * 1.1), rectTransform.position.z);
     }
 
+    public void HandleCardClick (CardController cardController, bool isSelected) {
+        if (isSelected) {
+            SelectCard (cardController);
+        } else {
+            DeselectCard (cardController);
+        }
+
+        bool canCast = castButton.OnSelectionChanged (selectedCards.Count);
+
+        UpdateAllSelectedCards (canCast);
+    }
+
+    void SelectCard (CardController cardController) {
+        selectedCards.Add (cardController);
+    }
+
+    void DeselectCard (CardController cardController) {
+        selectedCards.Remove (cardController);
+        cardController.UpdateSelectedCardIndex (0);
+    }
+
     void UpdateAllSelectedCards (bool canCast) {
         foreach (CardController selectedCardController in selectedCards) {
-            selectedCardController.UpdateSelectedCardIndex (RetrieveIndex (selectedCardController), canCast);
+            selectedCardController.UpdateSelectedCardIndex (RetrieveDisplayIndex (selectedCardController), canCast);
         }
+    }
+
+    int RetrieveDisplayIndex (CardController cardController) {
+        return selectedCards.IndexOf (cardController) + 1;
     }
 }

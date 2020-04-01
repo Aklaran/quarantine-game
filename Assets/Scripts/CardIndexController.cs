@@ -19,17 +19,17 @@ public class CardIndexController : MonoBehaviour {
         UpdateText ();
     }
 
-    public void SetCanCast (bool canCast) {
-        this.canCast = canCast;
-        UpdateColor ();
-    }
-
     void UpdateText () {
         if (isDisplayed) {
             textMesh.text = indexToDisplay.ToString ();
         } else {
             textMesh.text = "";
         }
+    }
+
+    public void SetCanCast (bool canCast) {
+        this.canCast = canCast;
+        UpdateColor ();
     }
 
     void UpdateColor () {
