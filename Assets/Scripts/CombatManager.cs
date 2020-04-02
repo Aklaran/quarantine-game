@@ -6,35 +6,61 @@ public class CombatManager : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
-    public List<CreatureController> combatParticipants;
+
+    public CastButtonController castButton;
+
+    public int cardsRequired;
+
+    GameObject target;
+
+    int cardsSelected;
+
     void Start()
     {
         GenerateCombatParticipants();
     }
 
     void GenerateCombatParticipants() {
-        // Instantiate the player and place on the left of the screen
-        GameObject player = GeneratePlayer();
-
-        // Instantiate the enemies and place on the right of the screen
-        GameObject enemy = GenerateEnemy();
-
-        // Keep track of all targetable entities
-        combatParticipants.Add(player.GetComponent<CreatureController>());
-        combatParticipants.Add(enemy.GetComponent<CreatureController>());
+        // Instantiate prefabs
+        GameObject player = GenerateCreature(playerPrefab);
+        GameObject enemy = GenerateCreature(enemyPrefab);
     }
 
-    GameObject GeneratePlayer() {
-        GameObject player = Instantiate(playerPrefab);
-        player.transform.SetParent(gameObject.transform, false);
+    GameObject GenerateCreature(GameObject creaturePrefab) {
+        GameObject creature = Instantiate(creaturePrefab);
 
-        return player;
+        creature.transform.SetParent(gameObject.transform, false);
+
+        creature.GetComponent<CreatureController>().combatManager = this;
+
+        return creature;
     }
 
-    GameObject GenerateEnemy() {
-        GameObject player = Instantiate(enemyPrefab);
-        player.transform.SetParent(gameObject.transform, false);
+    public void SetTarget(GameObject target) {
+        this.target = target;
 
-        return player;
+        CheckCastReady();
+    }
+
+    public bool ParseSpell(int numCards) {
+        // TODO: return true and set ref if cards selected match a spell in database
+
+        this.cardsSelected = numCards;
+
+        CheckCastReady();
+
+        return this.cardsSelected == cardsRequired;
+    }
+
+    void CheckCastReady () {
+        if (target != null && cardsSelected == cardsRequired) {
+            castButton.SetReady(true);
+        } else {
+            castButton.SetReady(false);
+        }
+    }
+
+    public void ExecuteSpell() {
+        // Apply the spell effects on the target
     }
 }

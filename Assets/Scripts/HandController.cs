@@ -6,7 +6,8 @@ public class HandController : MonoBehaviour {
     public List<CardController> selectedCards;
     public int maxCards;
     public GameObject cardPrefab;
-    public CastButtonController castButton;
+
+    public CombatManager combatManager;
 
     void Start () {
         GenerateCards ();
@@ -43,7 +44,7 @@ public class HandController : MonoBehaviour {
             DeselectCard (cardController);
         }
 
-        bool canCast = castButton.OnSelectionChanged (selectedCards.Count);
+        bool canCast = combatManager.ParseSpell (selectedCards.Count);
 
         UpdateAllSelectedCards (canCast);
     }
