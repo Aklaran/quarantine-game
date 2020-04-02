@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CharacterController : MonoBehaviour {
+public class CreatureController : MonoBehaviour {
     // Raw hp amount, the player could have anywhere from 1-X
     float hp;
     public string characterName;
