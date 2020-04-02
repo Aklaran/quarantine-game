@@ -28,7 +28,7 @@ public class CreatureController : MonoBehaviour {
 
         if (isSelected) {
             // Set this creature as the target
-            combatManager.SetTarget(gameObject);
+            combatManager.SetTarget(this);
 
             ShowTargetingArrow();
         } else {

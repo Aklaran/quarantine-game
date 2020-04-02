@@ -11,7 +11,7 @@ public class CombatManager : MonoBehaviour
 
     public int cardsRequired;
 
-    GameObject target;
+    CreatureController target;
 
     int cardsSelected;
 
@@ -36,7 +36,7 @@ public class CombatManager : MonoBehaviour
         return creature;
     }
 
-    public void SetTarget(GameObject target) {
+    public void SetTarget(CreatureController target) {
         this.target = target;
 
         CheckCastReady();
@@ -61,6 +61,6 @@ public class CombatManager : MonoBehaviour
     }
 
     public void ExecuteSpell() {
-        // Apply the spell effects on the target
+        // TODO: Apply the spell effects on the target
     }
 }
