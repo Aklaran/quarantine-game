@@ -9,8 +9,6 @@ public class CreatureController : MonoBehaviour {
 
     public GameObject targetingArrow;
 
-    bool isSelected;
-
     // Raw hp amount, the player could have anywhere from 1-X
     float hp;
     void Start () {
@@ -24,26 +22,14 @@ public class CreatureController : MonoBehaviour {
     }
 
     void OnMouseUp () {
-        isSelected = !isSelected;
-
-        if (isSelected) {
-            // Set this creature as the target
-            combatManager.SetTarget(this);
-
-            ShowTargetingArrow();
-        } else {
-            // Reset the target if clicked again
-            combatManager.SetTarget(null);
-
-            HideTargetingArrow();
-        }
+        combatManager.HandleCreatureClick(this);
     }
 
-    void ShowTargetingArrow() {
+    public void ShowTargetingArrow() {
         targetingArrow.SetActive(true);
     }
 
-    void HideTargetingArrow() {
+    public void HideTargetingArrow() {
         targetingArrow.SetActive(false);
     }
 

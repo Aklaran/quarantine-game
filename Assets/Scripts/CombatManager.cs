@@ -11,9 +11,13 @@ public class CombatManager : MonoBehaviour
 
     public int cardsRequired;
 
-    CreatureController target;
+    List<CreatureController> targets;
 
     int cardsSelected;
+
+    void Awake() {
+        targets = new List<CreatureController>();
+    }
 
     void Start()
     {
@@ -36,24 +40,37 @@ public class CombatManager : MonoBehaviour
         return creature;
     }
 
-    public void SetTarget(CreatureController target) {
-        this.target = target;
+    public void HandleCreatureClick(CreatureController creature) {
 
+        // Check for target selection and update visual indicators accordingly
+        if (targets.Contains(creature)) {
+            targets.Remove(creature);
+
+            creature.HideTargetingArrow();
+        } else {
+            targets.Add(creature);
+
+            creature.ShowTargetingArrow();
+        }
+
+        // Update UI if all conditions for casting a spell have been met
         CheckCastReady();
     }
 
     public bool ParseSpell(int numCards) {
         // TODO: return true and set ref if cards selected match a spell in database
-
+        
         this.cardsSelected = numCards;
 
+        // Update UI if all conditions for casting a spell have been met
         CheckCastReady();
 
+        // Let caller know if card selection conditions have been met
         return this.cardsSelected == cardsRequired;
     }
 
     void CheckCastReady () {
-        if (target != null && cardsSelected == cardsRequired) {
+        if (targets.Count != 0 && cardsSelected == cardsRequired) {
             castButton.SetReady(true);
         } else {
             castButton.SetReady(false);
