@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CastButtonController : MonoBehaviour
 {
-    bool isReady;
-    SpriteRenderer spriteRenderer;
     public Sprite redSprite;
     public Sprite greySprite;
 
     public int cardsRequired;
+
+    bool isReady;
+    SpriteRenderer spriteRenderer;
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
