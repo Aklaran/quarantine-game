@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class CastButtonController : MonoBehaviour
 {
-    bool isReady;
-    SpriteRenderer spriteRenderer;
     public Sprite redSprite;
     public Sprite greySprite;
 
     public int cardsRequired;
 
+    bool isReady;
+    SpriteRenderer spriteRenderer;
+
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public bool OnSelectionChanged(int numSelected) {
-        isReady = numSelected == cardsRequired;
+    public void SetReady (bool ready) {
+        isReady = ready;
         spriteRenderer.sprite = isReady ? redSprite : greySprite;
-        return isReady;
     }
 
     void OnMouseUp() {

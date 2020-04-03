@@ -1,14 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CharacterController : MonoBehaviour {
-    // Raw hp amount, the player could have anywhere from 1-X
-    float hp;
-    public string characterName;
+public class CreatureController : MonoBehaviour {
     public HealthbarController healthbarController;
 
-    // Start is called before the first frame update
+    public string characterName;
+
+    public CombatManager combatManager;
+
+    public GameObject targetingArrow;
+
+    // Raw hp amount, the player could have anywhere from 1-X
+    float hp;
     void Start () {
         hp = 100;
         // Populate name of character
@@ -19,9 +21,12 @@ public class CharacterController : MonoBehaviour {
         }
     }
 
-    // Purely for testing purposes
     void OnMouseUp () {
-        TakeDamage (20);
+        combatManager.HandleCreatureClick(this);
+    }
+
+    public void SetTargetingArrowDisplay(bool shouldDisplay) {
+        targetingArrow.SetActive(shouldDisplay);
     }
 
     // Deducts raw damage from current hp and proportionately scales down the hp bar.  This will be the main method used for visual health updates
