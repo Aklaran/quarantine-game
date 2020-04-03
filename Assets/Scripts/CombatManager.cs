@@ -26,31 +26,31 @@ public class CombatManager : MonoBehaviour
 
     void GenerateCombatParticipants() {
         // Instantiate prefabs
-        GameObject player = GenerateCreature(playerPrefab);
-        GameObject enemy = GenerateCreature(enemyPrefab);
+        GenerateCreature(playerPrefab);
+        GenerateCreature(enemyPrefab);
     }
 
-    GameObject GenerateCreature(GameObject creaturePrefab) {
+    void GenerateCreature(GameObject creaturePrefab) {
         GameObject creature = Instantiate(creaturePrefab);
 
         creature.transform.SetParent(gameObject.transform, false);
 
         creature.GetComponent<CreatureController>().combatManager = this;
-
-        return creature;
     }
 
     public void HandleCreatureClick(CreatureController creature) {
 
-        // Check for target selection and update visual indicators accordingly
+        // Check for target selection and update creature displays accordingly
         if (targets.Contains(creature)) {
             targets.Remove(creature);
 
-            creature.HideTargetingArrow();
+            creature.SetTargetingArrowDisplay(false);
+
         } else {
             targets.Add(creature);
 
-            creature.ShowTargetingArrow();
+            creature.SetTargetingArrowDisplay(true);
+
         }
 
         // Update UI if all conditions for casting a spell have been met
@@ -70,11 +70,7 @@ public class CombatManager : MonoBehaviour
     }
 
     void CheckCastReady () {
-        if (targets.Count != 0 && cardsSelected == cardsRequired) {
-            castButton.SetReady(true);
-        } else {
-            castButton.SetReady(false);
-        }
+        castButton.SetReady(targets.Count != 0 && cardsSelected == cardsRequired);
     }
 
     public void ExecuteSpell() {

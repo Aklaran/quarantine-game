@@ -25,13 +25,21 @@ public class CardController : MonoBehaviour {
     }
 
     void OnMouseUp () {
-        isSelected = !isSelected;
-        spriteRenderer.color = isSelected ? selectedColor : unselectedColor;
-
         handController.HandleCardClick (this, isSelected);
     }
 
-    public void UpdateSelectedCardIndex (int newIndex, bool canCast = false) {
+    public void SetSelected(bool selected) {
+        this.isSelected = selected;
+    }
+
+    public void UpdateCardDisplay (int newIndex, bool canCast = false) {
+        // A non-zero index indicates that the card is selected
+        spriteRenderer.color = isSelected ? selectedColor : unselectedColor;
+
+        UpdateCardIndexDisplay(newIndex, canCast);
+    }
+
+    void UpdateCardIndexDisplay(int newIndex, bool canCast = false) {
         cardIndexController.UpdateIndex (newIndex);
         cardIndexController.SetCanCast (canCast);
     }

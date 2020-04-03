@@ -25,12 +25,8 @@ public class CreatureController : MonoBehaviour {
         combatManager.HandleCreatureClick(this);
     }
 
-    public void ShowTargetingArrow() {
-        targetingArrow.SetActive(true);
-    }
-
-    public void HideTargetingArrow() {
-        targetingArrow.SetActive(false);
+    public void SetTargetingArrowDisplay(bool shouldDisplay) {
+        targetingArrow.SetActive(shouldDisplay);
     }
 
     // Deducts raw damage from current hp and proportionately scales down the hp bar.  This will be the main method used for visual health updates

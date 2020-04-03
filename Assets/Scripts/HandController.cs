@@ -38,11 +38,15 @@ public class HandController : MonoBehaviour {
     }
 
     public void HandleCardClick (CardController cardController, bool isSelected) {
-        if (isSelected) {
+        if (!isSelected) {
             SelectCard (cardController);
         } else {
             DeselectCard (cardController);
         }
+
+        // Let the card know that its selection status has changed
+        // This call must happen before UpdateAllSelectedCards()
+        cardController.SetSelected(!isSelected);
 
         bool canCast = combatManager.ParseSpell (selectedCards.Count);
 
@@ -55,12 +59,12 @@ public class HandController : MonoBehaviour {
 
     void DeselectCard (CardController cardController) {
         selectedCards.Remove (cardController);
-        cardController.UpdateSelectedCardIndex (0);
+        cardController.UpdateCardDisplay (0);
     }
 
     void UpdateAllSelectedCards (bool canCast) {
         foreach (CardController selectedCardController in selectedCards) {
-            selectedCardController.UpdateSelectedCardIndex (RetrieveDisplayIndex (selectedCardController), canCast);
+            selectedCardController.UpdateCardDisplay (RetrieveDisplayIndex (selectedCardController), canCast);
         }
     }
 
