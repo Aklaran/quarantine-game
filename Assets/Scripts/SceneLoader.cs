@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
-{
-    public void LoadScene(int destinationSceneIndex) {
-        SceneManager.LoadScene(destinationSceneIndex);
+public class SceneLoader : MonoBehaviour {
+    public void LoadScene (int destinationSceneIndex) {
+        SceneManager.LoadScene (destinationSceneIndex);
     }
 }

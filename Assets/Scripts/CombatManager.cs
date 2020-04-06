@@ -64,6 +64,16 @@ public class CombatManager : MonoBehaviour {
     }
 
     public void ExecuteSpell () {
-        spellProcessor.CastSpell(selectedCards, targets);
+        // Compiling a list of all creatures that have died after the spell
+        List<CreatureController> targetsToRemove = new List<CreatureController> ();
+        spellProcessor.CastSpell (selectedCards, targets);
+        foreach (CreatureController creature in targets) {
+            if (creature.isCreatureDead ()) {
+                creature.DestroyCreature ();
+                targetsToRemove.Add (creature);
+            }
+        }
+        // Requires a predicate for RemoveAll call so I'm just using a lambda expression
+        targets.RemoveAll (target => targetsToRemove.Contains (target));
     }
 }

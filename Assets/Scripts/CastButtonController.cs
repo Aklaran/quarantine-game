@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CastButtonController : MonoBehaviour
-{
+public class CastButtonController : MonoBehaviour {
     public Sprite redSprite;
     public Sprite greySprite;
     public int cardsRequired;
@@ -12,8 +11,8 @@ public class CastButtonController : MonoBehaviour
     bool isReady;
     SpriteRenderer spriteRenderer;
 
-    void Start() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+    void Start () {
+        spriteRenderer = GetComponent<SpriteRenderer> ();
     }
 
     public void SetReady (bool ready) {
@@ -21,9 +20,9 @@ public class CastButtonController : MonoBehaviour
         spriteRenderer.sprite = isReady ? redSprite : greySprite;
     }
 
-    void OnMouseUp() {
+    void OnMouseUp () {
         if (isReady) {
-            combatManager.ExecuteSpell();
+            combatManager.ExecuteSpell ();
         }
     }
 }

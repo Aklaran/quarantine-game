@@ -38,8 +38,14 @@ public class CreatureController : MonoBehaviour {
         hp -= rawDamage;
         // Check to see if character has died
         // We'll just have the visual indicator for death be that the sprite disappears.
-        if (hp <= 0) {
-            Destroy (gameObject);
-        }
+    }
+
+    public bool isCreatureDead () {
+        return (hp <= 0);
+    }
+
+    public void DestroyCreature () {
+        Destroy (gameObject);
+
     }
 }
