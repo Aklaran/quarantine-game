@@ -6,8 +6,8 @@ public class CastButtonController : MonoBehaviour
 {
     public Sprite redSprite;
     public Sprite greySprite;
-
     public int cardsRequired;
+    public CombatManager combatManager;
 
     bool isReady;
     SpriteRenderer spriteRenderer;
@@ -23,8 +23,7 @@ public class CastButtonController : MonoBehaviour
 
     void OnMouseUp() {
         if (isReady) {
-            Debug.Log("cast button clicked");
-            // TODO: CJ - Decrease character health bars
+            combatManager.ExecuteSpell();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class CreatureController : MonoBehaviour {
-    public HealthbarController healthbarController;
+    HealthbarController healthbarController;
 
     public string characterName;
 
@@ -18,19 +18,22 @@ public class CreatureController : MonoBehaviour {
             if (t.name == "Name") {
                 t.gameObject.GetComponent<TextMesh> ().text = characterName;
             }
+            if (t.name == "HealthBar") {
+                healthbarController = t.gameObject.GetComponent<HealthbarController> ();
+            }
         }
     }
 
     void OnMouseUp () {
-        combatManager.HandleCreatureClick(this);
+        combatManager.HandleCreatureClick (this);
     }
 
-    public void SetTargetingArrowDisplay(bool shouldDisplay) {
-        targetingArrow.SetActive(shouldDisplay);
+    public void SetTargetingArrowDisplay (bool shouldDisplay) {
+        targetingArrow.SetActive (shouldDisplay);
     }
 
     // Deducts raw damage from current hp and proportionately scales down the hp bar.  This will be the main method used for visual health updates
-    void TakeDamage (float rawDamage) {
+    public void TakeDamage (float rawDamage) {
         healthbarController.DecreaseHealth (rawDamage / hp);
         hp -= rawDamage;
         // Check to see if character has died

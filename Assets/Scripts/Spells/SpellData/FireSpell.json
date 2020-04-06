@@ -1,6 +1,8 @@
 {
-    "type": 0,
-    "amount": 15,
+    "type": 1,
+    "amount": 15.0,
     "duration": 0,
-    "element": 0
+    "element": 1,
+    "verb": 0,
+    "manner": 0
 }

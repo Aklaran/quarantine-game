@@ -1,9 +1,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 public class SpellProcessor {
+    bool hasElement, hasVerb, hasManner;
 
     public bool IsSpellComplete (List<CardController> selectedCards) {
-        return true;
+        resetSpell ();
+        foreach (CardController selectedCard in selectedCards) {
+            switch (selectedCard.spell.type) {
+                case SpellType.ELEMENT:
+                    hasElement = true;
+                    break;
+                case SpellType.VERB:
+                    hasVerb = true;
+                    break;
+                case SpellType.MANNER:
+                    hasManner = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return (hasElement && hasVerb && hasManner);
     }
 
     public void CastSpell (List<CardController> selectedCards, List<CreatureController> targets) {
@@ -21,9 +39,14 @@ public class SpellProcessor {
                     break;
             }
         }
-        Debug.Log ("Current damage amount: " + multiplier * damage);
         foreach (CreatureController target in targets) {
             target.TakeDamage (multiplier == 0 ? damage : multiplier * damage);
         }
+    }
+
+    void resetSpell () {
+        this.hasElement = false;
+        this.hasVerb = false;
+        this.hasManner = false;
     }
 }

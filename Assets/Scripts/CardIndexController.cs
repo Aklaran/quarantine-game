@@ -13,10 +13,16 @@ public class CardIndexController : MonoBehaviour {
         textMesh = GetComponent<TextMesh> ();
     }
 
-    public void UpdateIndex (int index) {
-        isDisplayed = index != 0;
-        indexToDisplay = index;
+    public void UpdateIndexDisplay (int index, bool canCast) {
+        SetIsDisplayed (index != -1);
+        UpdateIndex (index);
+        SetCanCast (canCast);
         UpdateText ();
+        UpdateColor ();
+    }
+
+    void UpdateIndex (int index) {
+        indexToDisplay = index;
     }
 
     void UpdateText () {
@@ -27,12 +33,16 @@ public class CardIndexController : MonoBehaviour {
         }
     }
 
-    public void SetCanCast (bool canCast) {
+    void SetIsDisplayed (bool isDisplayed) {
+        this.isDisplayed = isDisplayed;
+    }
+
+    void SetCanCast (bool canCast) {
         this.canCast = canCast;
         UpdateColor ();
     }
 
     void UpdateColor () {
-        textMesh.color = canCast?readyCastColor : unreadyCastColor;
+        textMesh.color = canCast ? readyCastColor : unreadyCastColor;
     }
 }

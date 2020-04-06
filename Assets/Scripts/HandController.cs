@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class HandController : MonoBehaviour {
     public List<CardController> selectedCards;
     public int maxCards;
     public GameObject cardPrefab;
-
     public CombatManager combatManager;
+    string[] spellPaths;
+    bool canCast;
+
+    void Awake () {
+        spellPaths = Directory.GetFiles ("Assets/", "*.json", SearchOption.AllDirectories);
+    }
 
     void Start () {
         GenerateCards ();
@@ -26,6 +32,7 @@ public class HandController : MonoBehaviour {
         cardGameObject.name = cardName;
         // Give the card object's script a reference to this script.
         cardGameObject.GetComponent<CardController> ().handController = this;
+        cardGameObject.GetComponent<CardController> ().spell = ReadJsonToSpell (spellPaths[index]);
     }
 
     Vector3 AlignCard (int index, RectTransform rectTransform) {
@@ -38,19 +45,18 @@ public class HandController : MonoBehaviour {
     }
 
     public void HandleCardClick (CardController cardController, bool isSelected) {
-        if (!isSelected) {
-            SelectCard (cardController);
-        } else {
+        if (isSelected) {
             DeselectCard (cardController);
+        } else {
+            SelectCard (cardController);
         }
-
+        this.canCast = combatManager.IsSpellValid (selectedCards);
         // Let the card know that its selection status has changed
         // This call must happen before UpdateAllSelectedCards()
-        cardController.SetSelected(!isSelected);
+        cardController.SetSelected (!isSelected);
+        cardController.UpdateCardDisplay ();
 
-        bool canCast = combatManager.ParseSpell (selectedCards.Count);
-
-        UpdateAllSelectedCards (canCast);
+        UpdateAllSelectedCards (this.canCast);
     }
 
     void SelectCard (CardController cardController) {
@@ -59,16 +65,21 @@ public class HandController : MonoBehaviour {
 
     void DeselectCard (CardController cardController) {
         selectedCards.Remove (cardController);
-        cardController.UpdateCardDisplay (0);
+        cardController.UpdateCardIndexDisplay (-1, this.canCast);
     }
 
     void UpdateAllSelectedCards (bool canCast) {
         foreach (CardController selectedCardController in selectedCards) {
-            selectedCardController.UpdateCardDisplay (RetrieveDisplayIndex (selectedCardController), canCast);
+            selectedCardController.UpdateCardIndexDisplay (RetrieveDisplayIndex (selectedCardController), canCast);
         }
     }
 
     int RetrieveDisplayIndex (CardController cardController) {
         return selectedCards.IndexOf (cardController) + 1;
+    }
+
+    // compact helper to read Json file then deserialize into a Spell reference attached to a CardController
+    Spell ReadJsonToSpell (string path) {
+        return JsonUtility.FromJson<Spell> (File.ReadAllText (path));
     }
 }

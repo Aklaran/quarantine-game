@@ -366,6 +366,7 @@ MonoBehaviour:
     type: 3}
   castButton: {fileID: 1041222530}
   cardsRequired: 3
+  selectedCards: []
 --- !u!4 &584664903
 Transform:
   m_ObjectHideFlags: 0
@@ -478,6 +479,7 @@ MonoBehaviour:
   redSprite: {fileID: 21300000, guid: 286f278a9d2be492fb733571efc7279f, type: 3}
   greySprite: {fileID: 21300000, guid: 47ffd528de3c7426ea9e27c0003eb010, type: 3}
   cardsRequired: 3
+  combatManager: {fileID: 0}
 --- !u!61 &1041222531
 BoxCollider2D:
   m_ObjectHideFlags: 0

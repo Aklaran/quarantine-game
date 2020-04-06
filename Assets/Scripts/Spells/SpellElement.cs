@@ -1,5 +1,6 @@
 public enum SpellElement{
-    FIRE = 0,
-    WATER = 1,
-    FROST = 2,
+    NOT_AVAILABLE = 0,
+    FIRE = 1,
+    WATER = 2,
+    FROST = 3,
 }

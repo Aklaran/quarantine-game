@@ -1,5 +1,7 @@
-{
-    "type": 1,
+{   
+    "type": 2,
     "multiplier": 1.5,
-    "verb": 0
+    "element": 0,
+    "verb": 1,
+    "manner": 0
 }

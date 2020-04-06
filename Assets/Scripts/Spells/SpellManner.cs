@@ -1,5 +1,6 @@
 public enum SpellManner{
-    IMMEDIATELY = 0,
-    OVER_TIME = 1,
-    LATER = 2,
+    NOT_AVAILABLE = 0,
+    IMMEDIATELY = 1,
+    OVER_TIME = 2,
+    LATER = 3,
 }

@@ -13,4 +13,6 @@ public class Spell {
     public SpellElement element;
     public SpellVerb verb;
     public SpellManner manner;
+
+
 }

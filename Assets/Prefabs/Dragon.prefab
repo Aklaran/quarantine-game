@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18cddf289435744319c41ee9e83103ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbarController: {fileID: 3209577535528806564}
+  healthbarController: {fileID: 0}
   characterName: Dragon
   combatManager: {fileID: 0}
   targetingArrow: {fileID: 5249771350204926493}

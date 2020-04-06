@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18cddf289435744319c41ee9e83103ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbarController: {fileID: 4554269515193734313}
+  healthbarController: {fileID: 0}
   characterName: CJ the gr8
   combatManager: {fileID: 0}
   targetingArrow: {fileID: 8158397805536742570}
